@@ -12,7 +12,8 @@ import footerImage from "./assets/pexels-cottonbro-4709369.jpg";
 buildPage();
 buildAbout();
 
-buildWork();
+//buildWork();
+//TODO: add assets for projects
 
 buildContact();
 
@@ -48,21 +49,20 @@ function buildAbout() {
   aboutHeading.textContent = "About Me";
   var bio = document.createElement("p");
   bio.textContent =
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dignissim dolor nec mi pulvinar accumsan. Vestibulum lobortis ultricies mauris, sed lacinia tellus facilisis et. Duis vel augue quis mi tincidunt porta sit amet in diam. Curabitur vulputate mi tincidunt nisi fermentum, et iaculis justo euismod. In tincidunt neque velit, eu bibendum erat luctus in. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.";
+    "Computer enginner and Space Force officer dedicated to leveraging advanced technologies to solve complex challenges. With a strong foundation in full-stack development, artificial intelligence, and machine learning, I am passionate about pushing the boundaries of innovation. I am eager to build and deliver solutions to tough problems.";
 
   var links = document.createElement("div");
   var git = document.createElement("img");
   git.src = gitIcon;
+  git.href = "https://github.com/mdemore2";
   git.classList.add("icon");
   var linked = document.createElement("img");
   linked.src = linkedIcon;
+  linked.href = "https://www.linkedin.com/in/mark-demore-ii-79bb63164";
   linked.classList.add("icon");
-  var twitter = document.createElement("img");
-  twitter.src = twitterIcon;
-  twitter.classList.add("icon");
+
   links.appendChild(git);
   links.appendChild(linked);
-  links.appendChild(twitter);
   links.classList.add("links");
 
   bioDiv.appendChild(aboutHeading);
@@ -89,11 +89,11 @@ function buildWork() {
   work.append(container);
 }
 
-function buildCard() {
+function buildCard(proj_title, proj_image, proj_description, git_link) {
   var card = document.createElement("div");
   card.classList.add("card");
   var img = document.createElement("img");
-  img.src = projectImage;
+  img.src = proj_image;
   img.classList.add("project-img");
 
   var textDiv = document.createElement("div");
@@ -102,24 +102,22 @@ function buildCard() {
   var titleDiv = document.createElement("div");
   titleDiv.classList.add("card-title");
   var title = document.createElement("h2");
-  title.textContent = "my project";
+  title.textContent = proj_title;
 
   var cardIcons = document.createElement("div");
   var git = document.createElement("img");
   git.src = gitIcon;
+  git.href = git_link;
   git.classList.add("icon");
-  var open = document.createElement("img");
-  open.src = openIcon;
+
   open.classList.add("icon");
   cardIcons.appendChild(git);
-  cardIcons.appendChild(open);
 
   titleDiv.appendChild(title);
   titleDiv.appendChild(cardIcons);
 
   var description = document.createElement("p");
-  description.textContent =
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dignissim dolor nec mi pulvinar accumsan. Vestibulum lobortis ultricies mauris, sed lacinia tellus facilisis et. Duis vel augue quis mi tincidunt porta sit amet in diam. Curabitur vulputate mi tincidunt nisi fermentum, et iaculis justo euismod. In tincidunt neque velit, eu bibendum erat luctus in. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.";
+  description.textContent = proj_description;
   textDiv.appendChild(titleDiv);
   textDiv.appendChild(description);
 
@@ -135,50 +133,26 @@ function buildContact() {
   title.textContent = "Connect with me";
   var content = document.createElement("div");
   content.classList.add("contact-content");
-  var callToAction = document.createElement("p");
-  callToAction.textContent = "Please don't hesitate to reach out!";
-  var address = document.createElement("p");
-  address.innerHTML = "123 Drury Lane<br>Muffin, MN 12345";
-  var info1 = document.createElement("span");
-  var info2 = document.createElement("span");
 
-  var number = document.createElement("p");
-  number.textContent = "+1 555-555-5555";
-  var emailAddr = document.createElement("p");
-  emailAddr.textContent = "not.me@gmail.com";
   var links = document.createElement("span");
 
   var git = document.createElement("img");
   git.src = gitIcon;
+  git.href = "https://github.com/mdemore2";
   git.classList.add("icon");
   var linked = document.createElement("img");
   linked.src = linkedIcon;
+  linked.href = "https://www.linkedin.com/in/mark-demore-ii-79bb63164";
   linked.classList.add("icon");
-  var phone = document.createElement("img");
-  phone.src = phoneIcon;
-  phone.classList.add("icon");
-  var email = document.createElement("img");
-  email.src = emailIcon;
-  email.classList.add("icon");
 
   var footer = document.createElement("img");
   footer.src = footerImage;
   footer.classList.add("footer");
 
-  info1.appendChild(phone);
-  info1.appendChild(number);
-
-  info2.appendChild(email);
-  info2.appendChild(emailAddr);
-
   links.appendChild(git);
   links.appendChild(linked);
 
   content.appendChild(title);
-  content.appendChild(callToAction);
-  content.appendChild(address);
-  content.appendChild(info1);
-  content.appendChild(info2);
   content.appendChild(links);
 
   contact.appendChild(content);
