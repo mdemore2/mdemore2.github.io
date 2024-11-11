@@ -49,16 +49,18 @@ function buildAbout() {
   aboutHeading.textContent = "About Me";
   var bio = document.createElement("p");
   bio.textContent =
-    "Computer enginner and Space Force officer dedicated to leveraging advanced technologies to solve complex challenges. With a strong foundation in full-stack development, artificial intelligence, and machine learning, I am passionate about pushing the boundaries of innovation. I am eager to build and deliver solutions to tough problems.";
-
+    "Computer enginner and Space Force officer building innovative solutions and integrating technology with real-world applications. Experienced in full-stack development, AI, and ML. Passionate about leveraging technology to solve complex problems.";
   var links = document.createElement("div");
   var git = document.createElement("img");
   git.src = gitIcon;
-  git.href = "https://github.com/mdemore2";
+  git.setAttribute("href", "https://github.com/mdemore2");
   git.classList.add("icon");
   var linked = document.createElement("img");
   linked.src = linkedIcon;
-  linked.href = "https://www.linkedin.com/in/mark-demore-ii-79bb63164";
+  linked.setAttribute(
+    "href",
+    "https://www.linkedin.com/in/mark-demore-ii-79bb63164"
+  );
   linked.classList.add("icon");
 
   links.appendChild(git);
@@ -107,7 +109,7 @@ function buildCard(proj_title, proj_image, proj_description, git_link) {
   var cardIcons = document.createElement("div");
   var git = document.createElement("img");
   git.src = gitIcon;
-  git.href = git_link;
+  git.setAttribute("href", git_link);
   git.classList.add("icon");
 
   open.classList.add("icon");
@@ -138,11 +140,14 @@ function buildContact() {
 
   var git = document.createElement("img");
   git.src = gitIcon;
-  git.href = "https://github.com/mdemore2";
+  git.setAttribute("href", "https://github.com/mdemore2");
   git.classList.add("icon");
   var linked = document.createElement("img");
   linked.src = linkedIcon;
-  linked.href = "https://www.linkedin.com/in/mark-demore-ii-79bb63164";
+  linked.setAttribute(
+    "href",
+    "https://www.linkedin.com/in/mark-demore-ii-79bb63164"
+  );
   linked.classList.add("icon");
 
   var footer = document.createElement("img");
