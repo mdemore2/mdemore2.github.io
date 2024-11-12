@@ -116,17 +116,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _assets_mark_jpeg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/mark.jpeg */ \"./src/assets/mark.jpeg\");\n/* harmony import */ var _assets_linkedin_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./assets/linkedin.svg */ \"./src/assets/linkedin.svg\");\n/* harmony import */ var _assets_github_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./assets/github.svg */ \"./src/assets/github.svg\");\n/* harmony import */ var _assets_email_outline_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./assets/email-outline.svg */ \"./src/assets/email-outline.svg\");\n/* harmony import */ var _assets_phone_outline_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./assets/phone-outline.svg */ \"./src/assets/phone-outline.svg\");\n/* harmony import */ var _assets_open_in_new_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./assets/open-in-new.svg */ \"./src/assets/open-in-new.svg\");\n/* harmony import */ var _assets_twitter_svg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./assets/twitter.svg */ \"./src/assets/twitter.svg\");\n/* harmony import */ var _assets_project_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./assets/project.png */ \"./src/assets/project.png\");\n/* harmony import */ var _assets_pexels_cottonbro_4709369_jpg__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./assets/pexels-cottonbro-4709369.jpg */ \"./src/assets/pexels-cottonbro-4709369.jpg\");\n\n\n\n\n\n\n\n\n\n\n\nbuildPage();\nbuildAbout();\n\n//buildWork();\n//TODO: add assets for projects\n\nbuildContact();\n\nfunction buildPage() {\n  var body = document.querySelector(\"body\");\n  var about = document.createElement(\"div\");\n  about.classList.add(\"about\");\n  var work = document.createElement(\"div\");\n  work.classList.add(\"work\");\n  var contact = document.createElement(\"div\");\n  contact.classList.add(\"contact\");\n\n  body.appendChild(about);\n  body.appendChild(work);\n  body.appendChild(contact);\n}\n\nfunction buildAbout() {\n  var about = document.querySelector(\".about\");\n\n  var portrait = document.createElement(\"div\");\n  portrait.classList.add(\"portrait\");\n  var img = document.createElement(\"img\");\n  img.src = _assets_mark_jpeg__WEBPACK_IMPORTED_MODULE_1__;\n  var name = document.createElement(\"h1\");\n  name.textContent = \"Mark Demore II\";\n  portrait.appendChild(img);\n  portrait.appendChild(name);\n\n  var bioDiv = document.createElement(\"div\");\n  bioDiv.classList.add(\"bio\");\n  var aboutHeading = document.createElement(\"h1\");\n  aboutHeading.textContent = \"About Me\";\n  var bio = document.createElement(\"p\");\n  bio.textContent =\n    \"Computer engineer and Space Force officer building innovative solutions and integrating technology with real-world applications. Experienced in full-stack development, AI, and ML. Passionate about leveraging technology to solve complex problems.\";\n  var links = document.createElement(\"div\");\n  var git = document.createElement(\"img\");\n  var gitWrapper = document.createElement(\"a\");\n  git.src = _assets_github_svg__WEBPACK_IMPORTED_MODULE_3__;\n  gitWrapper.setAttribute(\"href\", \"https://github.com/mdemore2\");\n  git.classList.add(\"icon\");\n  gitWrapper.appendChild(git);\n  var linkedWrapper = document.createElement(\"a\");\n  var linked = document.createElement(\"img\");\n  linked.src = _assets_linkedin_svg__WEBPACK_IMPORTED_MODULE_2__;\n  linkedWrapper.setAttribute(\n    \"href\",\n    \"https://www.linkedin.com/in/mark-demore-ii-79bb63164\"\n  );\n  linked.classList.add(\"icon\");\n  linkedWrapper.appendChild(linked);\n\n  links.appendChild(gitWrapper);\n  links.appendChild(linkedWrapper);\n  links.classList.add(\"links\");\n\n  bioDiv.appendChild(aboutHeading);\n  bioDiv.appendChild(bio);\n  bioDiv.appendChild(links);\n\n  about.appendChild(portrait);\n  //  about.appendChild(name);\n  about.appendChild(bioDiv);\n}\n\nfunction buildWork() {\n  var work = document.querySelector(\".work\");\n  var heading = document.createElement(\"h1\");\n  heading.textContent = \"My Work\";\n  var container = document.createElement(\"div\");\n  container.classList.add(\"container\");\n\n  for (let i = 0; i < 6; i++) {\n    container.appendChild(buildCard());\n  }\n\n  work.appendChild(heading);\n  work.append(container);\n}\n\nfunction buildCard(proj_title, proj_image, proj_description, git_link) {\n  var card = document.createElement(\"div\");\n  card.classList.add(\"card\");\n  var img = document.createElement(\"img\");\n  img.src = proj_image;\n  img.classList.add(\"project-img\");\n\n  var textDiv = document.createElement(\"div\");\n  textDiv.classList.add(\"card-text\");\n\n  var titleDiv = document.createElement(\"div\");\n  titleDiv.classList.add(\"card-title\");\n  var title = document.createElement(\"h2\");\n  title.textContent = proj_title;\n\n  var cardIcons = document.createElement(\"div\");\n  var gitWrapper = document.createElement(\"a\");\n  gitWrapper.setAttribute(\"href\", git_link);\n  var git = document.createElement(\"img\");\n  git.src = _assets_github_svg__WEBPACK_IMPORTED_MODULE_3__;\n  git.classList.add(\"icon\");\n  gitWrapper.appendChild(git);\n\n  cardIcons.appendChild(gitWrapper);\n\n  titleDiv.appendChild(title);\n  titleDiv.appendChild(cardIcons);\n\n  var description = document.createElement(\"p\");\n  description.textContent = proj_description;\n  textDiv.appendChild(titleDiv);\n  textDiv.appendChild(description);\n\n  card.appendChild(img);\n  card.appendChild(textDiv);\n\n  return card;\n}\n\nfunction buildContact() {\n  var contact = document.querySelector(\".contact\");\n  var title = document.createElement(\"h1\");\n  title.textContent = \"Connect with me\";\n  var content = document.createElement(\"div\");\n  content.classList.add(\"contact-content\");\n\n  var links = document.createElement(\"span\");\n\n  var git = document.createElement(\"img\");\n  var gitWrapper = document.createElement(\"a\");\n  git.src = _assets_github_svg__WEBPACK_IMPORTED_MODULE_3__;\n  gitWrapper.setAttribute(\"href\", \"https://github.com/mdemore2\");\n  git.classList.add(\"icon\");\n  gitWrapper.appendChild(git);\n\n  var linked = document.createElement(\"img\");\n  var linkedWrapper = document.createElement(\"a\");\n  linked.src = _assets_linkedin_svg__WEBPACK_IMPORTED_MODULE_2__;\n  linkedWrapper.setAttribute(\n    \"href\",\n    \"https://www.linkedin.com/in/mark-demore-ii-79bb63164\"\n  );\n  linked.classList.add(\"icon\");\n  linkedWrapper.appendChild(linked);\n\n  var footer = document.createElement(\"img\");\n  footer.src = _assets_pexels_cottonbro_4709369_jpg__WEBPACK_IMPORTED_MODULE_9__;\n  footer.classList.add(\"footer\");\n\n  links.appendChild(gitWrapper);\n  links.appendChild(linkedWrapper);\n\n  content.appendChild(title);\n  content.appendChild(links);\n\n  contact.appendChild(content);\n  contact.appendChild(footer);\n}\n\n\n//# sourceURL=webpack://mdemore2.github.io/./src/index.js?");
-
-/***/ }),
-
-/***/ "./src/assets/email-outline.svg":
-/*!**************************************!*\
-  !*** ./src/assets/email-outline.svg ***!
-  \**************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-eval("module.exports = __webpack_require__.p + \"ffe24abaeb56c6af70c1.svg\";\n\n//# sourceURL=webpack://mdemore2.github.io/./src/assets/email-outline.svg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _assets_mark_jpeg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/mark.jpeg */ \"./src/assets/mark.jpeg\");\n/* harmony import */ var _assets_linkedin_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./assets/linkedin.svg */ \"./src/assets/linkedin.svg\");\n/* harmony import */ var _assets_github_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./assets/github.svg */ \"./src/assets/github.svg\");\n/* harmony import */ var _assets_tidalfy_43_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./assets/tidalfy_43.png */ \"./src/assets/tidalfy_43.png\");\n/* harmony import */ var _assets_ledispi_43_jpg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./assets/ledispi_43.jpg */ \"./src/assets/ledispi_43.jpg\");\n/* harmony import */ var _assets_tidal_readme_43_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./assets/tidal-readme_43.png */ \"./src/assets/tidal-readme_43.png\");\n/* harmony import */ var _assets_homepage_43_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./assets/homepage_43.png */ \"./src/assets/homepage_43.png\");\n/* harmony import */ var _assets_pexels_cottonbro_4709369_jpg__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./assets/pexels-cottonbro-4709369.jpg */ \"./src/assets/pexels-cottonbro-4709369.jpg\");\n\n\n\n\n\n\n\n\n\n\nbuildPage();\nbuildAbout();\n\nconst projectList = [\n  [\n    \"Tidal-README\",\n    _assets_tidal_readme_43_png__WEBPACK_IMPORTED_MODULE_6__,\n    \"GitHub action workflow that automatically updates your GitHub profile readme with your most listened to music from Tidal.\",\n    \"https://github.com/mdemore2/tidal-readme\",\n  ],\n  [\n    \"LEDispi\",\n    _assets_ledispi_43_jpg__WEBPACK_IMPORTED_MODULE_5__,\n    \"Python app running on an rpi0 to display flight info for planes going by my window, with pushbullet integration to make it easily extensible.\",\n    \"https://github.com/mdemore2/ledispi\",\n  ],\n  [\n    \"Tidalfy\",\n    _assets_tidalfy_43_png__WEBPACK_IMPORTED_MODULE_4__,\n    \"Flask app to easily copy playlists between Tidal and Spotify, and vice-versa, to share with friends.\",\n    \"https://github.com/mdemore2/tidalfy\",\n  ],\n  [\n    \"This website\",\n    _assets_homepage_43_png__WEBPACK_IMPORTED_MODULE_7__,\n    \"Homepage for my personal website and portfolio built as an assignment from The Odin Project.\",\n    \"https://github.com/mdemore2/mdemore2.github.io\",\n  ],\n];\n\nbuildWork();\nbuildContact();\n\nfunction buildPage() {\n  var body = document.querySelector(\"body\");\n  var about = document.createElement(\"div\");\n  about.classList.add(\"about\");\n  var work = document.createElement(\"div\");\n  work.classList.add(\"work\");\n  var contact = document.createElement(\"div\");\n  contact.classList.add(\"contact\");\n\n  body.appendChild(about);\n  body.appendChild(work);\n  body.appendChild(contact);\n}\n\nfunction buildAbout() {\n  var about = document.querySelector(\".about\");\n\n  var portrait = document.createElement(\"div\");\n  portrait.classList.add(\"portrait\");\n  var img = document.createElement(\"img\");\n  img.src = _assets_mark_jpeg__WEBPACK_IMPORTED_MODULE_1__;\n  var name = document.createElement(\"h1\");\n  name.textContent = \"Mark Demore II\";\n  portrait.appendChild(img);\n  portrait.appendChild(name);\n\n  var bioDiv = document.createElement(\"div\");\n  bioDiv.classList.add(\"bio\");\n  var aboutHeading = document.createElement(\"h1\");\n  aboutHeading.textContent = \"About Me\";\n  var bio = document.createElement(\"p\");\n  bio.textContent =\n    \"Computer engineer and Space Force officer building innovative solutions and integrating technology with real-world applications. Experienced in full-stack development, AI, and ML. Passionate about leveraging technology to solve complex problems.\";\n  var links = document.createElement(\"div\");\n  var git = document.createElement(\"img\");\n  var gitWrapper = document.createElement(\"a\");\n  git.src = _assets_github_svg__WEBPACK_IMPORTED_MODULE_3__;\n  gitWrapper.setAttribute(\"href\", \"https://github.com/mdemore2\");\n  git.classList.add(\"icon\");\n  gitWrapper.appendChild(git);\n  var linkedWrapper = document.createElement(\"a\");\n  var linked = document.createElement(\"img\");\n  linked.src = _assets_linkedin_svg__WEBPACK_IMPORTED_MODULE_2__;\n  linkedWrapper.setAttribute(\n    \"href\",\n    \"https://www.linkedin.com/in/mark-demore-ii-79bb63164\"\n  );\n  linked.classList.add(\"icon\");\n  linkedWrapper.appendChild(linked);\n\n  links.appendChild(gitWrapper);\n  links.appendChild(linkedWrapper);\n  links.classList.add(\"links\");\n\n  bioDiv.appendChild(aboutHeading);\n  bioDiv.appendChild(bio);\n  bioDiv.appendChild(links);\n\n  about.appendChild(portrait);\n  //  about.appendChild(name);\n  about.appendChild(bioDiv);\n}\n\nfunction buildWork() {\n  var work = document.querySelector(\".work\");\n  var heading = document.createElement(\"h1\");\n  heading.textContent = \"My Work\";\n  var container = document.createElement(\"div\");\n  container.classList.add(\"container\");\n\n  container.appendChild(\n    buildCard(\n      projectList[0][0],\n      projectList[0][1],\n      projectList[0][2],\n      projectList[0][3]\n    )\n  );\n  container.appendChild(\n    buildCard(\n      projectList[1][0],\n      projectList[1][1],\n      projectList[1][2],\n      projectList[1][3]\n    )\n  );\n  container.appendChild(\n    buildCard(\n      projectList[2][0],\n      projectList[2][1],\n      projectList[2][2],\n      projectList[2][3]\n    )\n  );\n  container.appendChild(\n    buildCard(\n      projectList[3][0],\n      projectList[3][1],\n      projectList[3][2],\n      projectList[3][3]\n    )\n  );\n\n  work.appendChild(heading);\n  work.append(container);\n}\n\nfunction buildCard(proj_title, proj_image, proj_description, git_link) {\n  var card = document.createElement(\"div\");\n  card.classList.add(\"card\");\n  var img = document.createElement(\"img\");\n  img.src = proj_image;\n  img.classList.add(\"project-img\");\n\n  var textDiv = document.createElement(\"div\");\n  textDiv.classList.add(\"card-text\");\n\n  var titleDiv = document.createElement(\"div\");\n  titleDiv.classList.add(\"card-title\");\n  var title = document.createElement(\"h2\");\n  title.textContent = proj_title;\n\n  var cardIcons = document.createElement(\"div\");\n  var gitWrapper = document.createElement(\"a\");\n  gitWrapper.setAttribute(\"href\", git_link);\n  var git = document.createElement(\"img\");\n  git.src = _assets_github_svg__WEBPACK_IMPORTED_MODULE_3__;\n  git.classList.add(\"icon\");\n  gitWrapper.appendChild(git);\n\n  cardIcons.appendChild(gitWrapper);\n\n  titleDiv.appendChild(title);\n  titleDiv.appendChild(cardIcons);\n\n  var description = document.createElement(\"p\");\n  description.textContent = proj_description;\n  textDiv.appendChild(titleDiv);\n  textDiv.appendChild(description);\n\n  card.appendChild(img);\n  card.appendChild(textDiv);\n\n  return card;\n}\n\nfunction buildContact() {\n  var contact = document.querySelector(\".contact\");\n  var title = document.createElement(\"h1\");\n  title.textContent = \"Connect with me\";\n  var content = document.createElement(\"div\");\n  content.classList.add(\"contact-content\");\n\n  var links = document.createElement(\"span\");\n\n  var git = document.createElement(\"img\");\n  var gitWrapper = document.createElement(\"a\");\n  git.src = _assets_github_svg__WEBPACK_IMPORTED_MODULE_3__;\n  gitWrapper.setAttribute(\"href\", \"https://github.com/mdemore2\");\n  git.classList.add(\"icon\");\n  gitWrapper.appendChild(git);\n\n  var linked = document.createElement(\"img\");\n  var linkedWrapper = document.createElement(\"a\");\n  linked.src = _assets_linkedin_svg__WEBPACK_IMPORTED_MODULE_2__;\n  linkedWrapper.setAttribute(\n    \"href\",\n    \"https://www.linkedin.com/in/mark-demore-ii-79bb63164\"\n  );\n  linked.classList.add(\"icon\");\n  linkedWrapper.appendChild(linked);\n\n  var footer = document.createElement(\"img\");\n  footer.src = _assets_pexels_cottonbro_4709369_jpg__WEBPACK_IMPORTED_MODULE_8__;\n  footer.classList.add(\"footer\");\n\n  links.appendChild(gitWrapper);\n  links.appendChild(linkedWrapper);\n\n  content.appendChild(title);\n  content.appendChild(links);\n\n  contact.appendChild(content);\n  contact.appendChild(footer);\n}\n\n\n//# sourceURL=webpack://mdemore2.github.io/./src/index.js?");
 
 /***/ }),
 
@@ -137,6 +127,26 @@ eval("module.exports = __webpack_require__.p + \"ffe24abaeb56c6af70c1.svg\";\n\n
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 eval("module.exports = __webpack_require__.p + \"550985caaa8859d4b95f.svg\";\n\n//# sourceURL=webpack://mdemore2.github.io/./src/assets/github.svg?");
+
+/***/ }),
+
+/***/ "./src/assets/homepage_43.png":
+/*!************************************!*\
+  !*** ./src/assets/homepage_43.png ***!
+  \************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"6e793394e037c559964c.png\";\n\n//# sourceURL=webpack://mdemore2.github.io/./src/assets/homepage_43.png?");
+
+/***/ }),
+
+/***/ "./src/assets/ledispi_43.jpg":
+/*!***********************************!*\
+  !*** ./src/assets/ledispi_43.jpg ***!
+  \***********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"a3cfb508d1a51c5b4005.jpg\";\n\n//# sourceURL=webpack://mdemore2.github.io/./src/assets/ledispi_43.jpg?");
 
 /***/ }),
 
@@ -160,16 +170,6 @@ eval("module.exports = __webpack_require__.p + \"b069651923214b385bfe.jpeg\";\n\
 
 /***/ }),
 
-/***/ "./src/assets/open-in-new.svg":
-/*!************************************!*\
-  !*** ./src/assets/open-in-new.svg ***!
-  \************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-eval("module.exports = __webpack_require__.p + \"3ede19ed228086e87d89.svg\";\n\n//# sourceURL=webpack://mdemore2.github.io/./src/assets/open-in-new.svg?");
-
-/***/ }),
-
 /***/ "./src/assets/pexels-cottonbro-4709369.jpg":
 /*!*************************************************!*\
   !*** ./src/assets/pexels-cottonbro-4709369.jpg ***!
@@ -180,33 +180,23 @@ eval("module.exports = __webpack_require__.p + \"1936f5c99ead30f333f1.jpg\";\n\n
 
 /***/ }),
 
-/***/ "./src/assets/phone-outline.svg":
-/*!**************************************!*\
-  !*** ./src/assets/phone-outline.svg ***!
-  \**************************************/
+/***/ "./src/assets/tidal-readme_43.png":
+/*!****************************************!*\
+  !*** ./src/assets/tidal-readme_43.png ***!
+  \****************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("module.exports = __webpack_require__.p + \"04d357205b0858045638.svg\";\n\n//# sourceURL=webpack://mdemore2.github.io/./src/assets/phone-outline.svg?");
+eval("module.exports = __webpack_require__.p + \"af803aa9fcb7b99c7937.png\";\n\n//# sourceURL=webpack://mdemore2.github.io/./src/assets/tidal-readme_43.png?");
 
 /***/ }),
 
-/***/ "./src/assets/project.png":
-/*!********************************!*\
-  !*** ./src/assets/project.png ***!
-  \********************************/
+/***/ "./src/assets/tidalfy_43.png":
+/*!***********************************!*\
+  !*** ./src/assets/tidalfy_43.png ***!
+  \***********************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("module.exports = __webpack_require__.p + \"fb0436c566b74b7883c0.png\";\n\n//# sourceURL=webpack://mdemore2.github.io/./src/assets/project.png?");
-
-/***/ }),
-
-/***/ "./src/assets/twitter.svg":
-/*!********************************!*\
-  !*** ./src/assets/twitter.svg ***!
-  \********************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-eval("module.exports = __webpack_require__.p + \"77a2f5734999924fb343.svg\";\n\n//# sourceURL=webpack://mdemore2.github.io/./src/assets/twitter.svg?");
+eval("module.exports = __webpack_require__.p + \"f0214b608a8476d01be7.png\";\n\n//# sourceURL=webpack://mdemore2.github.io/./src/assets/tidalfy_43.png?");
 
 /***/ })
 

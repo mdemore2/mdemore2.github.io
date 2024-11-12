@@ -2,19 +2,43 @@ import "./style.css";
 import portraitImage from "./assets/mark.jpeg";
 import linkedIcon from "./assets/linkedin.svg";
 import gitIcon from "./assets/github.svg";
-import emailIcon from "./assets/email-outline.svg";
-import phoneIcon from "./assets/phone-outline.svg";
-import openIcon from "./assets/open-in-new.svg";
-import twitterIcon from "./assets/twitter.svg";
-import projectImage from "./assets/project.png";
+import tidalfyImage from "./assets/tidalfy_43.png";
+import ledispiImage from "./assets/ledispi_43.jpg";
+import readmeImage from "./assets/tidal-readme_43.png";
+import homepageImage from "./assets/homepage_43.png";
 import footerImage from "./assets/pexels-cottonbro-4709369.jpg";
 
 buildPage();
 buildAbout();
 
-//buildWork();
-//TODO: add assets for projects
+const projectList = [
+  [
+    "Tidal-README",
+    readmeImage,
+    "GitHub action workflow that automatically updates your GitHub profile readme with your most listened to music from Tidal.",
+    "https://github.com/mdemore2/tidal-readme",
+  ],
+  [
+    "LEDispi",
+    ledispiImage,
+    "Python app running on an rpi0 to display flight info for planes going by my window, with pushbullet integration to make it easily extensible.",
+    "https://github.com/mdemore2/ledispi",
+  ],
+  [
+    "Tidalfy",
+    tidalfyImage,
+    "Flask app to easily copy playlists between Tidal and Spotify, and vice-versa, to share with friends.",
+    "https://github.com/mdemore2/tidalfy",
+  ],
+  [
+    "This website",
+    homepageImage,
+    "Homepage for my personal website and portfolio built as an assignment from The Odin Project.",
+    "https://github.com/mdemore2/mdemore2.github.io",
+  ],
+];
 
+buildWork();
 buildContact();
 
 function buildPage() {
@@ -87,9 +111,38 @@ function buildWork() {
   var container = document.createElement("div");
   container.classList.add("container");
 
-  for (let i = 0; i < 6; i++) {
-    container.appendChild(buildCard());
-  }
+  container.appendChild(
+    buildCard(
+      projectList[0][0],
+      projectList[0][1],
+      projectList[0][2],
+      projectList[0][3]
+    )
+  );
+  container.appendChild(
+    buildCard(
+      projectList[1][0],
+      projectList[1][1],
+      projectList[1][2],
+      projectList[1][3]
+    )
+  );
+  container.appendChild(
+    buildCard(
+      projectList[2][0],
+      projectList[2][1],
+      projectList[2][2],
+      projectList[2][3]
+    )
+  );
+  container.appendChild(
+    buildCard(
+      projectList[3][0],
+      projectList[3][1],
+      projectList[3][2],
+      projectList[3][3]
+    )
+  );
 
   work.appendChild(heading);
   work.append(container);
