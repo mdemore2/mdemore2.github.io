@@ -145,6 +145,10 @@ img {
     align-items: center;
 }
 
+a {
+    width: 32px;
+}
+
 .contact .icon {
     filter:invert(93%) sepia(4%) saturate(929%) hue-rotate(179deg) brightness(94%) contrast(86%);
 }
