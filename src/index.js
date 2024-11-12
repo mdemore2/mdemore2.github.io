@@ -49,22 +49,26 @@ function buildAbout() {
   aboutHeading.textContent = "About Me";
   var bio = document.createElement("p");
   bio.textContent =
-    "Computer enginner and Space Force officer building innovative solutions and integrating technology with real-world applications. Experienced in full-stack development, AI, and ML. Passionate about leveraging technology to solve complex problems.";
+    "Computer engineer and Space Force officer building innovative solutions and integrating technology with real-world applications. Experienced in full-stack development, AI, and ML. Passionate about leveraging technology to solve complex problems.";
   var links = document.createElement("div");
   var git = document.createElement("img");
+  var gitWrapper = document.createElement("a");
   git.src = gitIcon;
-  git.setAttribute("href", "https://github.com/mdemore2");
+  gitWrapper.setAttribute("href", "https://github.com/mdemore2");
   git.classList.add("icon");
+  gitWrapper.appendChild(git);
+  var linkedWrapper = document.createElement("a");
   var linked = document.createElement("img");
   linked.src = linkedIcon;
-  linked.setAttribute(
+  linkedWrapper.setAttribute(
     "href",
     "https://www.linkedin.com/in/mark-demore-ii-79bb63164"
   );
   linked.classList.add("icon");
+  linkedWrapper.appendChild(linked);
 
-  links.appendChild(git);
-  links.appendChild(linked);
+  links.appendChild(gitWrapper);
+  links.appendChild(linkedWrapper);
   links.classList.add("links");
 
   bioDiv.appendChild(aboutHeading);
@@ -107,13 +111,14 @@ function buildCard(proj_title, proj_image, proj_description, git_link) {
   title.textContent = proj_title;
 
   var cardIcons = document.createElement("div");
+  var gitWrapper = document.createElement("a");
+  gitWrapper.setAttribute("href", git_link);
   var git = document.createElement("img");
   git.src = gitIcon;
-  git.setAttribute("href", git_link);
   git.classList.add("icon");
+  gitWrapper.appendChild(git);
 
-  open.classList.add("icon");
-  cardIcons.appendChild(git);
+  cardIcons.appendChild(gitWrapper);
 
   titleDiv.appendChild(title);
   titleDiv.appendChild(cardIcons);
@@ -139,23 +144,28 @@ function buildContact() {
   var links = document.createElement("span");
 
   var git = document.createElement("img");
+  var gitWrapper = document.createElement("a");
   git.src = gitIcon;
-  git.setAttribute("href", "https://github.com/mdemore2");
+  gitWrapper.setAttribute("href", "https://github.com/mdemore2");
   git.classList.add("icon");
+  gitWrapper.appendChild(git);
+
   var linked = document.createElement("img");
+  var linkedWrapper = document.createElement("a");
   linked.src = linkedIcon;
-  linked.setAttribute(
+  linkedWrapper.setAttribute(
     "href",
     "https://www.linkedin.com/in/mark-demore-ii-79bb63164"
   );
   linked.classList.add("icon");
+  linkedWrapper.appendChild(linked);
 
   var footer = document.createElement("img");
   footer.src = footerImage;
   footer.classList.add("footer");
 
-  links.appendChild(git);
-  links.appendChild(linked);
+  links.appendChild(gitWrapper);
+  links.appendChild(linkedWrapper);
 
   content.appendChild(title);
   content.appendChild(links);
